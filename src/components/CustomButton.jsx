@@ -3,11 +3,19 @@ import { useSnapshot } from "valtio";
 
 const CustomButton = ({ type, title, customStyles, handleClick }) => {
   const snap = useSnapshot(state);
+  console.log("snap", snap);
   const generateStyle = (type) => {
     if (type === "filled") {
       return {
         backgroundColor: snap.color,
-        color: "#fff",
+        color:
+          snap.color.startsWith("#fff") ||
+          snap.color.startsWith("#f6") ||
+          snap.color.startsWith("#fe") ||
+          snap.color.startsWith("#fff") ||
+          snap.color.startsWith("#fc")
+            ? "#000000"
+            : "#fff",
       };
     }
   };
