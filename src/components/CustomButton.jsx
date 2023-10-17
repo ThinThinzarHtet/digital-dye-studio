@@ -4,7 +4,6 @@ import { getContrastingColor } from "../config/helpers";
 
 const CustomButton = ({ type, title, customStyles, handleClick }) => {
   const snap = useSnapshot(state);
-  console.log("snap", snap);
   const generateStyle = (type) => {
     if (type === "filled") {
       return {
